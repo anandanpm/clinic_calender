@@ -61,7 +61,7 @@ A modern, responsive appointment management system designed for clinic staff to 
    \`\`\`
 
 4. **Open your browser**
-   Navigate to \`http://localhost:5173\`
+   `clinic-calender.vercel.app`
 
 ### Demo Credentials
 - **Email**: \`staff@clinic.com\`
