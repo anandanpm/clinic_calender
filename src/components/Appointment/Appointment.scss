@@ -1,0 +1,44 @@
+.modal {
+  .form-group {
+    select, input, textarea {
+      &.error {
+        border-color: $danger-color;
+        box-shadow: 0 0 0 3px rgba($danger-color, 0.1);
+      }
+    }
+  }
+}
+
+.delete-confirm {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  
+  span {
+    font-size: 0.875rem;
+    color: $danger-color;
+    font-weight: 500;
+  }
+}
+
+.modal-actions {
+  display: flex;
+  gap: $spacing-sm;
+  margin-left: auto;
+}
+
+@media (max-width: $mobile) {
+  .modal-footer {
+    flex-direction: column;
+    gap: $spacing-md;
+    
+    .delete-confirm {
+      justify-content: center;
+    }
+    
+    .modal-actions {
+      margin-left: 0;
+      justify-content: center;
+    }
+  }
+}
