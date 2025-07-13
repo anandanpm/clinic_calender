@@ -1,0 +1,122 @@
+.header {
+  background: rgba($light-bg, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba($light-border, 0.5);
+  box-shadow: $shadow-lg;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  .dark & {
+    background: rgba($dark-surface, 0.95);
+    border-bottom-color: rgba($dark-border, 0.5);
+  }
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-lg 0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  background: $gradient-primary;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  svg {
+    color: $primary-color;
+    filter: drop-shadow(0 2px 4px rgba($primary-color, 0.3));
+  }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.user-name {
+  font-size: $font-size-sm;
+  color: $light-text-secondary;
+  font-weight: $font-weight-medium;
+  padding: $spacing-xs $spacing-sm;
+  background: rgba($primary-color, 0.1);
+  border-radius: $border-radius-md;
+  
+  .dark & {
+    color: $dark-text-secondary;
+  }
+}
+
+.theme-toggle,
+.logout-btn {
+  padding: $spacing-sm;
+  border-radius: $border-radius-md;
+  position: relative;
+  
+  &:hover {
+    background-color: rgba($primary-color, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  svg {
+    transition: all $transition-fast;
+  }
+  
+  &:hover svg {
+    transform: scale(1.1);
+  }
+}
+
+.theme-toggle {
+  &:hover {
+    background-color: rgba($warning-color, 0.1);
+  }
+}
+
+.logout-btn {
+  &:hover {
+    background-color: rgba($danger-color, 0.1);
+    color: $danger-color;
+  }
+}
+
+@media (max-width: $mobile) {
+  .header-content {
+    padding: $spacing-md 0;
+  }
+  
+  .header-right {
+    gap: $spacing-sm;
+  }
+  
+  .user-name {
+    display: none;
+  }
+  
+  .logo {
+    font-size: $font-size-lg;
+  }
+  
+  .theme-toggle,
+  .logout-btn {
+    padding: $spacing-xs;
+    
+    span {
+      display: none;
+    }
+  }
+}
