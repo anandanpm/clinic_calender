@@ -16,7 +16,6 @@ interface MobileCalendarProps {
 }
 
 const MobileCalendar: React.FC<MobileCalendarProps> = ({
-  currentDate,
   appointments,
   onDateClick,
   onAppointmentClick,

@@ -7,8 +7,8 @@ import { useAppointments } from "../../hooks/useAppointments"
 import { MOCK_PATIENTS, MOCK_DOCTORS } from "../../data/mockData"
 import CalendarGrid from "./CalendarGrid"
 import MobileCalendar from "./MobileCalendar"
-import AppointmentModal from "../AppointmentModal/AppointmentModal"
-import FilterModal from "../FilterModal/FilterModal"
+import AppointmentModal from "../Appointment/Appointment"
+import FilterModal from "../Filter/Filter"
 import "./Calendar.scss"
 
 const Calendar: React.FC = () => {
@@ -28,8 +28,6 @@ const Calendar: React.FC = () => {
     addAppointment,
     updateAppointment,
     deleteAppointment,
-    getAppointmentsByDate,
-    getAppointmentsByMonth,
   } = useAppointments()
 
   useEffect(() => {
