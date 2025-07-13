@@ -3,7 +3,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { X } from "lucide-react"
 import { MOCK_PATIENTS, MOCK_DOCTORS } from "../../data/mockData"
-import "./FilterModal.scss"
+import "./Filter.scss"
 
 interface FilterModalProps {
   isOpen: boolean
