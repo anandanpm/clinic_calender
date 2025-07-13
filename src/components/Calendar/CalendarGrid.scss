@@ -1,0 +1,173 @@
+.calendar-grid {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: $light-surface;
+  border-bottom: 1px solid #e5e7eb;
+  
+  .dark & {
+    background: $dark-bg;
+    border-bottom-color: #4b5563;
+  }
+}
+
+.weekday {
+  padding: $spacing-md;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: $light-text-secondary;
+  
+  .dark & {
+    color: $dark-text-secondary;
+  }
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  flex: 1;
+}
+
+.calendar-day {
+  border-right: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: $spacing-sm;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
+  
+  .dark & {
+    border-right-color: #4b5563;
+    border-bottom-color: #4b5563;
+  }
+  
+  &:hover {
+    background-color: rgba($primary-color, 0.05);
+  }
+  
+  &.other-month {
+    background-color: $light-surface;
+    color: $light-text-secondary;
+    
+    .dark & {
+      background-color: $dark-bg;
+      color: $dark-text-secondary;
+    }
+    
+    .day-number {
+      opacity: 0.5;
+    }
+  }
+  
+  &.today {
+    background-color: rgba($primary-color, 0.1);
+    
+    .day-number {
+      background-color: $primary-color;
+      color: white;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+  }
+}
+
+.day-number {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: $spacing-xs;
+  align-self: flex-start;
+}
+
+.day-appointments {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.appointment-item {
+  background: rgba($primary-color, 0.1);
+  border: 1px solid rgba($primary-color, 0.2);
+  border-radius: $border-radius-sm;
+  padding: 2px 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: rgba($primary-color, 0.2);
+    transform: translateY(-1px);
+  }
+  
+  .appointment-time {
+    font-weight: 600;
+    color: $primary-color;
+    line-height: 1.2;
+  }
+  
+  .appointment-patient {
+    color: $light-text;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    .dark & {
+      color: $dark-text;
+    }
+  }
+  
+  .appointment-doctor {
+    color: $light-text-secondary;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    .dark & {
+      color: $dark-text-secondary;
+    }
+  }
+}
+
+.more-appointments {
+  font-size: 0.75rem;
+  color: $light-text-secondary;
+  text-align: center;
+  padding: 2px;
+  
+  .dark & {
+    color: $dark-text-secondary;
+  }
+}
+
+@media (max-width: $tablet) {
+  .calendar-grid {
+    height: auto;
+  }
+  
+  .calendar-day {
+    min-height: 80px;
+  }
+  
+  .appointment-item {
+    .appointment-doctor {
+      display: none;
+    }
+  }
+}

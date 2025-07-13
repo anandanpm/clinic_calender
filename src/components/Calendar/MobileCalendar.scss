@@ -1,0 +1,223 @@
+.mobile-calendar {
+  padding: $spacing-md;
+}
+
+.mobile-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-lg;
+  gap: $spacing-sm;
+}
+
+.nav-btn {
+  padding: $spacing-sm;
+  flex-shrink: 0;
+}
+
+.date-selector {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.date-button {
+  background: none;
+  border: 1px solid #d1d5db;
+  border-radius: $border-radius-md;
+  padding: $spacing-sm $spacing-md;
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  .dark & {
+    border-color: #4b5563;
+    color: $dark-text;
+  }
+  
+  &:hover {
+    border-color: $primary-color;
+    background-color: rgba($primary-color, 0.05);
+  }
+}
+
+.date-text {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.today-badge {
+  background: $primary-color;
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: $border-radius-sm;
+  font-weight: 600;
+}
+
+.date-picker-overlay {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  margin-top: $spacing-xs;
+}
+
+.date-input {
+  padding: $spacing-sm;
+  border: 1px solid #d1d5db;
+  border-radius: $border-radius-md;
+  background: $light-bg;
+  box-shadow: $shadow-lg;
+  
+  .dark & {
+    background: $dark-surface;
+    border-color: #4b5563;
+    color: $dark-text;
+  }
+}
+
+.mobile-day-view {
+  background: $light-bg;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+  overflow: hidden;
+  
+  .dark & {
+    background: $dark-surface;
+  }
+}
+
+.day-header {
+  padding: $spacing-lg;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  .dark & {
+    border-bottom-color: #4b5563;
+  }
+  
+  h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $light-text;
+    
+    .dark & {
+      color: $dark-text;
+    }
+  }
+}
+
+.appointments-list {
+  padding: $spacing-md;
+}
+
+.no-appointments {
+  text-align: center;
+  padding: $spacing-xl;
+  
+  p {
+    color: $light-text-secondary;
+    margin: 0;
+    
+    .dark & {
+      color: $dark-text-secondary;
+    }
+  }
+}
+
+.mobile-appointment-item {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-md;
+  border: 1px solid #e5e7eb;
+  border-radius: $border-radius-md;
+  margin-bottom: $spacing-sm;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  .dark & {
+    border-color: #4b5563;
+  }
+  
+  &:hover {
+    border-color: $primary-color;
+    background-color: rgba($primary-color, 0.05);
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.appointment-time-badge {
+  background: $primary-color;
+  color: white;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius-md;
+  font-size: 0.875rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  min-width: 70px;
+  text-align: center;
+}
+
+.appointment-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.appointment-patient {
+  font-weight: 600;
+  color: $light-text;
+  margin-bottom: 2px;
+  
+  .dark & {
+    color: $dark-text;
+  }
+}
+
+.appointment-doctor {
+  font-size: 0.875rem;
+  color: $light-text-secondary;
+  margin-bottom: 2px;
+  
+  .dark & {
+    color: $dark-text-secondary;
+  }
+}
+
+.appointment-notes {
+  font-size: 0.75rem;
+  color: $light-text-secondary;
+  font-style: italic;
+  
+  .dark & {
+    color: $dark-text-secondary;
+  }
+}
+
+.appointment-arrow {
+  color: $light-text-secondary;
+  flex-shrink: 0;
+  
+  .dark & {
+    color: $dark-text-secondary;
+  }
+}
+
+.add-appointment-btn {
+  white-space: nowrap;
+}
